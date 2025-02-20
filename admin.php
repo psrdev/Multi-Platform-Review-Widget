@@ -70,7 +70,18 @@ function mprw_sanitize_options($input)
 // Settings page HTML
 function mprw_settings_page()
 {
-    $options = get_option('mprw_options');
+    $default_options = array(
+        'cta_text' => '',
+        'platforms' => array(
+            'google' => array('link' => ''),
+            'facebook' => array('link' => ''),
+            'tripadvisor' => array('link' => ''),
+            'trustpilot' => array('link' => ''),
+        ),
+    );
+
+    $options = get_option('mprw_options', $default_options);
+    $options = wp_parse_args($options, $default_options);
     ?>
     <div class="wrap">
         <h1>Multi-Platform Review Widget Settings</h1>
@@ -78,34 +89,64 @@ function mprw_settings_page()
             <?php settings_fields('mprw_options_group'); ?>
             <table class="form-table">
                 <tr>
-                    <th scope="row">Enabled Platforms</th>
+                    <th scope="row">Call-to-Action Text</th>
+                    <td><input type="text" name="mprw_options[cta_text]"
+                            value="<?php echo esc_attr($options['cta_text']); ?>"></td>
+                </tr>
+                <tr>
                     <td>
                         <table id="platforms-table">
                             <tr>
                                 <th>Platform</th>
                                 <th>Link</th>
-
                             </tr>
-
-
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/google.svg'; ?>" width="30px"
+                                        height="30px" title="Google">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][google][link]"
+                                        value="<?php echo esc_attr($options['platforms']['google']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/facebook.svg'; ?>" width="30px"
+                                        height="30px" title="Facebook">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][facebook][link]"
+                                        value="<?php echo esc_attr($options['platforms']['facebook']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/tripadvisor.svg'; ?>" width="30px"
+                                        height="30px" title="Tripadvisor">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][tripadvisor][link]"
+                                        value="<?php echo esc_attr($options['platforms']['tripadvisor']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/trustpilot.svg'; ?>" width="30px"
+                                        height="30px" title="Trustpilot">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][trustpilot][link]"
+                                        value="<?php echo esc_attr($options['platforms']['trustpilot']['link']); ?>">
+                                </td>
+                            </tr>
                         </table>
-
                     </td>
                 </tr>
-
-
-                <tr>
-                    <th scope="row">Call-to-Action Text</th>
-                    <td><input type="text" name="mprw_options[cta_text]"
-                            value="<?php echo esc_attr($options['cta_text']); ?>"></td>
-                </tr>
-
             </table>
             <?php submit_button(); ?>
         </form>
-
     </div>
-
     <?php
 }
 

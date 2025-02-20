@@ -3,7 +3,7 @@
  * Plugin Name: Multi-Platform Review Widget
  * Description: A WordPress plugin that allows website visitors to leave reviews across multiple platforms.
  * Version: 1.0
- * Author: Your Name
+ * Author: Pravin Singh Rana
  */
 
 if (!defined('ABSPATH')) {
