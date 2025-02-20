@@ -1,54 +1,76 @@
 .mprw-widget {
   position: fixed;
   z-index: 9999;
-  padding: 10px;
-  border-radius: 5px 5px 0 0;
-  background-color: red;
-  color: white;
+  padding: 10px 5px;
+  background-color: #fff;
+  width: min-content;
+
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 }
 
 .mprw-widget.bottom-right {
   bottom: 0;
-  right: 20px;
-}
-
-.mprw-widget.bottom-left {
-  bottom: 0;
-  left: 20px;
+  right: 30%;
 }
 
 .mprw-widget-button {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 5px 8px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
-
-.mprw-widget-content {
+.mprw-widget-cta {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.mprw-widget-platforms {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  list-style: none;
+  margin-left: 10px;
+}
+.mprw-widget-platforms li {
+  padding: 0 12px;
+  position: relative;
+  transition: all 0.3s;
+}
+.mprw-widget-platforms li:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.mprw-widget-platforms li:last-child:after {
   display: none;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
-
-.mprw-widget-content h3 {
-  margin-top: 0;
+.mprw-widget-platforms li a img {
+  transition: all 0.3s;
 }
 
 @media (max-width: 768px) {
   .mprw-widget {
-    width: 100%;
     left: 0;
     right: 0;
-    border-radius: 0;
   }
-
   .mprw-widget-button {
     text-align: center;
   }
-
-  .mprw-popup-content {
-    width: 90%;
-    max-width: none;
+}
+@media (max-width: 330px) {
+  .mprw-widget-platforms li {
+    padding: 0 10px;
+  }
+  .mprw-widget-platforms li a img {
+    width: 20px;
+    height: 20px;
   }
 }

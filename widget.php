@@ -11,7 +11,19 @@ function mprw_add_widget()
     ?>
     <div id="mprw-widget" class="mprw-widget bottom-right">
         <div class="mprw-widget-button">
-            <?php echo esc_html($options['cta_text']); ?>
+            <div class="mprw-widget-cta"><?php echo esc_html($options['cta_text']); ?></div>
+            <ul class="mprw-widget-platforms">
+                <li><a href="#"><img src="<?php echo MPRW_PLUGIN_URL . "assets/google.svg" ?>" alt="Google" width="30px"
+                            height="30px"></a></li>
+                <li><a href="#"><img src="<?php echo MPRW_PLUGIN_URL . "assets/facebook.svg" ?>" alt="Facebook" width="30px"
+                            height="30px"></a></li>
+                <li><a href="#"><img src="<?php echo MPRW_PLUGIN_URL . "assets/tripadvisor.svg" ?>" alt="Tripadvisor"
+                            width="30px" height="30px"></a></li>
+                <li><a href="#"><img src="<?php echo MPRW_PLUGIN_URL . "assets/trustpilot.svg" ?>" alt="Trustpilot"
+                            width="30px" height="30px"></a></li>
+
+
+            </ul>
         </div>
 
     </div>
