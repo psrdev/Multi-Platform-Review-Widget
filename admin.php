@@ -74,54 +74,52 @@ class MPRW_Admin
                                 value="<?php echo esc_attr($options['cta_text']); ?>"></td>
                     </tr>
                     <tr>
-                        <td>
-                            <table id="platforms-table">
-                                <tr>
-                                    <th>Platform</th>
-                                    <th>Link</th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="<?php echo MPRW_PLUGIN_URL . 'assets/google.svg'; ?>" width="30px"
-                                            height="30px" title="Google">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="mprw_options[platforms][google][link]"
-                                            value="<?php echo esc_attr($options['platforms']['google']['link']); ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="<?php echo MPRW_PLUGIN_URL . 'assets/facebook.svg'; ?>" width="30px"
-                                            height="30px" title="Facebook">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="mprw_options[platforms][facebook][link]"
-                                            value="<?php echo esc_attr($options['platforms']['facebook']['link']); ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="<?php echo MPRW_PLUGIN_URL . 'assets/tripadvisor.svg'; ?>" width="30px"
-                                            height="30px" title="Tripadvisor">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="mprw_options[platforms][tripadvisor][link]"
-                                            value="<?php echo esc_attr($options['platforms']['tripadvisor']['link']); ?>">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <img src="<?php echo MPRW_PLUGIN_URL . 'assets/trustpilot.svg'; ?>" width="30px"
-                                            height="30px" title="Trustpilot">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="mprw_options[platforms][trustpilot][link]"
-                                            value="<?php echo esc_attr($options['platforms']['trustpilot']['link']); ?>">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
+                        <table id="platforms-table">
+                            <tr>
+                                <th>Platform</th>
+                                <th>Link</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/google.svg'; ?>" width="30px" height="30px"
+                                        title="Google">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][google][link]"
+                                        value="<?php echo esc_attr($options['platforms']['google']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/facebook.svg'; ?>" width="30px" height="30px"
+                                        title="Facebook">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][facebook][link]"
+                                        value="<?php echo esc_attr($options['platforms']['facebook']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/tripadvisor.svg'; ?>" width="30px"
+                                        height="30px" title="Tripadvisor">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][tripadvisor][link]"
+                                        value="<?php echo esc_attr($options['platforms']['tripadvisor']['link']); ?>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo MPRW_PLUGIN_URL . 'assets/trustpilot.svg'; ?>" width="30px"
+                                        height="30px" title="Trustpilot">
+                                </td>
+                                <td>
+                                    <input type="text" name="mprw_options[platforms][trustpilot][link]"
+                                        value="<?php echo esc_attr($options['platforms']['trustpilot']['link']); ?>">
+                                </td>
+                            </tr>
+                        </table>
                     </tr>
                 </table>
                 <?php submit_button(); ?>
