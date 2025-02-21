@@ -10,35 +10,43 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-// Define plugin constants
-define('MPRW_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('MPRW_PLUGIN_URL', plugin_dir_url(__FILE__));
-
-// Include necessary files
-require_once MPRW_PLUGIN_DIR . 'admin.php';
-require_once MPRW_PLUGIN_DIR . 'widget.php';
-
-// Enqueue scripts and styles
-function mprw_enqueue_scripts()
+class MultiPlatformReviewWidget
 {
-    wp_enqueue_style('mprw-style', MPRW_PLUGIN_URL . 'style.css', array(), '1.0');
-    wp_enqueue_script('mprw-script', MPRW_PLUGIN_URL . 'widget.js', array('jquery'), '1.0', true);
-}
-add_action('wp_enqueue_scripts', 'mprw_enqueue_scripts');
+    public function __construct()
+    {
+        // Define plugin constants
+        define('MPRW_PLUGIN_DIR', plugin_dir_path(__FILE__));
+        define('MPRW_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-// Activation hook
-function mprw_activate()
-{
+        // Include necessary files
+        require_once MPRW_PLUGIN_DIR . 'admin.php';
+        require_once MPRW_PLUGIN_DIR . 'widget.php';
 
-}
-register_activation_hook(__FILE__, 'mprw_activate');
+        // Hooks
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
+        register_activation_hook(__FILE__, [$this, 'activate']);
+        register_deactivation_hook(__FILE__, [$this, 'deactivate']);
+    }
 
-// Deactivation hook
-function mprw_deactivate()
-{
-    // Cleanup tasks if needed
+    public function enqueue_scripts()
+    {
+        wp_enqueue_style('mprw-style', MPRW_PLUGIN_URL . 'style.css', array(), '1.0');
+        wp_enqueue_script('mprw-script', MPRW_PLUGIN_URL . 'widget.js', array('jquery'), '1.0', true);
+    }
+
+    public function activate()
+    {
+        // Activation tasks
+    }
+
+    public function deactivate()
+    {
+        // Deactivation tasks
+    }
 }
-register_deactivation_hook(__FILE__, 'mprw_deactivate');
+
+// Initialize the plugin
+new MultiPlatformReviewWidget();
 
 
 

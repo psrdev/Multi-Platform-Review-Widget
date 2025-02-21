@@ -56,6 +56,10 @@
   transition: all 0.3s;
 }
 
+.mprw-widget-platforms li:hover a img {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .mprw-widget {
     left: 0;
